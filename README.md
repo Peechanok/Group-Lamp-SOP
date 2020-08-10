@@ -1,1 +1,0 @@
-# Group-Lamp-SOP
