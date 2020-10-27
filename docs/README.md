@@ -10,7 +10,8 @@ Store Module  กลุ่ม หลอดไฟ
 6. 61070346 ลลิตา สอาดเหลือ
 
 
-
+##User interface
+https://peechanok.github.io/Group-Lamp-SOP/
 
 **หมายเหตุ:** 1. เนื่องจากยังไม่ได้ลงรายละเอียดในส่วนของการทำงาน จึงไม่สามารถทำงานอื่นได้ (Search, Create, Update, Delete) นอกจากการแสดงรายละเอียด (Read)
 
