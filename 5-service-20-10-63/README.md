@@ -13,5 +13,5 @@
 - Import ทั้งหมดลง Eclipse 
 - Build and Run App : service-registration-and-discovery-service
 - Build and Run App : service-discovery-client1-5 
-[Imgur](https://i.imgur.com/hOcBaLs.jpg)
-[Imgur](https://i.imgur.com/zvHLKYe.jpg)
+![Image](https://imgur.com/zvHLKYe.jpg)
+![Image](https://imgur.com/hOcBaLs.jpg)
