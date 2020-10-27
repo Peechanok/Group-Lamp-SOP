@@ -3,17 +3,8 @@ package com.microservices.servicediscovery.bean;
 public class Student {
     String id;
     String name;
-    String account;
 
-    public String getAccount() {
-		return account;
-	}
-
-	public void setAccount(String account) {
-		this.account = account;
-	}
-
-	public String getId() {
+    public String getId() {
         return id;
     }
 

@@ -18,8 +18,7 @@ import com.microservices.servicediscovery.bean.Student;
 public class StudentService {
 	private String jsonString = "{'61070003':'นายกฤตนัย  พหนการ','61070004':'นางสาวกฤติมา  จันทะชาลี','61070006':'นายกฤษฎาภา  ง่วนจร'}";
 	private JsonObject jsonObject = (JsonObject) JsonParser.parseString(jsonString);
-	private String jsonAccount = "{'61070003':'pppfdfsf','61070004':'fdfvfvf','61070006':'fdgfdgfdg'}";
-	private JsonObject jsontAc = (JsonObject) JsonParser.parseString(jsonAccount);
+
 	@Autowired
 	private DiscoveryClient discoveryClient;
 	
@@ -34,7 +33,11 @@ public class StudentService {
 		Student s = new Student();
 		s.setId(studentId);
 		s.setName(jsonObject.get(studentId).getAsString());
-		s.setAccount(jsontAc.get(studentId).getAsString());
 		return s;
 	}
+	
+	@RequestMapping(value = "/gogo")
+    public String Test() {
+    	return "hello World";
+    }
 }

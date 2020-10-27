@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Service Status</title>
+    <style>
+.row, .list{
+    margin: 20px;
+}
+.card {
+    display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 15%;
+  margin:0;
+  
+}
+.up{
+    background-color: #4fef97c2;
+}
+
+.down{
+    background-color: #d65b47;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+</style>
+</head>
+
+<body>
+    <div class="row">
+        <div id="service_list" class="list">
+        </div>
+    </div>
+    <script>
+        function createItem(name, status) {
+            let text = `<div class="${status == false ? "card down" : "card up" }">
+                            <a href="#"><img  src="${status == false ? "https://image.flaticon.com/icons/png/512/16/16096.png" : "https://findicons.com/files/icons/977/rrze/720/available.png"}" alt=""  style="width:100%"></a>  
+                            <div class="container">
+                                <h3>${name}</h3>
+                                <p>Status: ${status == false ? "DOWN" : "UP" } </p>
+                            </div>
+                        </div>`
+            return text
+        }
+        fetch("http://localhost:8761/all")
+            .then(response => response.json())
+            .then(result => {
+                let field = document.getElementById("service_list")
+                let up = result.up
+                let down = result.down
+                console.log(result)
+                for (i = 0; i < up.length; i++) {
+                    console.log(up[i])
+                    if(up[i] != "UNKNOWN"){
+                        field.innerHTML += createItem(up[i], true)
+                    }
+                }
+                for (i = 0; i < down.length; i++) {
+                    field.innerHTML += createItem(down[i], false)
+                }
+            })
+            .catch(error => console.log('error', error));
+    </script>
+</body>
+
+</html>
