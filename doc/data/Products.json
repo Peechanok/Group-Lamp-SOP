@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Huawei Band 4",
+        "description": "Huawei Band 4 สายรัดข้อมืออัจฉริยะ",
+        "price": 1299,
+        "amount": 32,
+        "picture": "https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/mobilephones/HUAWEI_Band_4/HUAWEI_Band_4_L_1.jpg",
+        "weight": 0.02,
+        "category": {
+            "id": 1,
+            "name": "LifeStyle"
+        },
+        "brand": {
+            "id": 1,
+            "name": "Huawei"
+        },
+        "shop": {
+            "id": 1
+        }
+    },
+    {
+        "id": 2,
+        "name": "Nintendo Switch V2 (Neon)",
+        "description": "Nintendo Switch V2 (Neon)\nเครื่องนอกประกันร้าน 1 ปี มีของพร้อมส่ง ส่งฟรี Kerry",
+        "price": 10990,
+        "amount": 5,
+        "picture": "https://www.spigen.co.th/pub/media/catalog/product/cache/e031c707d8d5335858c951252cdcb376/n/i/nintendo_switch_spigen_rugged_armor_black_08.jpg",
+        "weight": 0.297,
+        "category": {
+            "id": 2,
+            "name": "Gaming"
+        },
+        "brand": {
+            "id": 2,
+            "name": "Nintendo"
+        },
+        "shop": {
+            "id": 2
+        }
+    }
+]
