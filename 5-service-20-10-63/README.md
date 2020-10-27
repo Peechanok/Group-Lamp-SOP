@@ -3,7 +3,7 @@
 
 # :paperclip: Services
 - Student Service
--Teacher Service
+- Teacher Service
 - Course Service
 - Grading Service
 - Acount Service
