@@ -13,7 +13,7 @@ Store Module  กลุ่ม หลอดไฟ
 ##User interface
 [https://peechanok.github.io/Group-Lamp-SOP/](https://peechanok.github.io/Group-Lamp-SOP/)<br><br>
 
-**หมายเหตุ:** 1. เนื่องจากยังไม่ได้ลงรายละเอียดในส่วนของการทำงาน จึงไม่สามารถทำงานอื่นได้ (Search, Create, Update, Delete) นอกจากการแสดงรายละเอียด (Read)
+**หมายเหตุ:** 1.ยังไม่ได้ลงรายละเอียดนะ
 
 ## Store Services
 -   สมัครสมาชิกลูกค้า (SignUp)
