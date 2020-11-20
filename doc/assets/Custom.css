@@ -585,4 +585,100 @@ td.text-right {
 	top: 0;
 	height: 100%;
 }
+.nav-style a:link,
+.nav-style a:active {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+#cart-icon{
+  margin-top:-13vh;
+  font-size:30px;
+  color:#800000;
+}
+
+#logo {
+  font: 3vmax Economica;
+  letter-spacing: 0.3em;
+  padding-top: 5px;
+  line-height: 5vmax;
+}
+
+.nav-style {
+  float: right;
+  border-bottom: 1px solid black;
+  padding:  2vh 5vw 12px 1vw;
+}
+
+nav ul li {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav-style a {
+  color: black;
+  font: 1.1vmax Ariel;
+}
+
+nav ul li a:hover {
+  font: 1.4vmax Ariel thick;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#sidenav {
+  margin-top: 30px;
+  position: absolute;
+}
+
+#sidenav a:link,
+p {
+  margin: 16px 85px;
+  display: block;
+  font: 16px Ariel #000000;
+  color: black;
+}
+h2{
+  
+  font-family:Ariel; font-weight:700;
+}
+.products-col {
+  margin-left: 27vw;
+}
+
+.main {
+  z-index: 3;
+  position: relative;
+  padding: 40px 10px 0 0;
+}
+
+.smaller-img {
+  width: 20vw;
+  height: 27vh;
+}
+
+figcaption {
+  text-align: left;
+}
+
+figcaption span {
+  font-weight: 700;
+}
+
+.flex-grid {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0;
+}
+
+.col {
+  flex: 0 1 22%;
+  margin: 7px 4px;
+  text-align:center;
+   padding: 0 0 0 0 ;
+}
+
+h6{
+ padding: 0 0 -27px 0 ;
+}
 
