@@ -580,4 +580,9 @@ td.text-center {
 td.text-right {
   text-align: right;
 }
+#cd-hamburger-menu, #cd-cart-trigger {
+	position: absolute;
+	top: 0;
+	height: 100%;
+}
 

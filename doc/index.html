@@ -18,22 +18,153 @@
     <!-- Favicons -->
     
 
-    <style>
-  
-    </style>
     <!-- Custom styles for this template -->
     <link href="pricing.css" rel="stylesheet">
 </head>
+<style>
+.sidebar-container {
+  position: fixed;
+  width: 220px;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.content-container {
+  padding-top: 20px;
+}
+
+.sidebar-logo {
+  padding: 10px 15px 10px 30px;
+  font-size: 20px;
+  background-color: #2574A9;
+}
+
+.sidebar-navigation {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  position: relative;
+}
+
+.sidebar-navigation li {
+  background-color: transparent;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  line-height: 20px;
+}
+
+.sidebar-navigation li a {
+  padding: 10px 15px 10px 30px;
+  display: block;
+  color: #fff;
+}
+
+.sidebar-navigation li .fa {
+  margin-right: 10px;
+}
+
+.sidebar-navigation li a:active,
+.sidebar-navigation li a:hover,
+.sidebar-navigation li a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.sidebar-navigation li::before {
+  background-color: #2574A9;
+  position: absolute;
+  content: '';
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
+  width: 3px;
+  z-index: -1;
+}
+
+.sidebar-navigation li:hover::before {
+  width: 100%;
+}
+
+.sidebar-navigation .header {
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: #151515;
+  padding: 10px 15px 10px 30px;
+}
+
+.sidebar-navigation .header::before {
+  background-color: transparent;
+}
+
+.content-container {
+  padding-left: 220px;
+}
+</style>
 
 <body>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <h5 class="my-0 mr-md-auto font-weight-normal">E-Commerce</h5>
-        <!--Modal: Login / Register Form-->
 
-<div class="text-center">
-  <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">ล็อกอินเข้าระบบ / สมัครสมาชิก</a>
+    <div class="sidebar-container">
+  <div class="sidebar-logo">
+    E-Commerce
+  </div>
+  
+  <ul class="sidebar-navigation">
+    <li class="header">Navigation</li>
+    <li>
+      <a href="../doc/src/edit.html">
+        <i class="fa fa-home" aria-hidden="true"></i> แก้ไขข้อมูลบัญชี
+      </a>
+    </li>
+    <li>
+      <a href="../doc/src/history.html">
+        <i class="fa fa-tachometer" aria-hidden="true"></i> ประวัติรายการสั่งซื้อ
+      </a>
+    </li>
+    <li>
+      <a href="../doc/src/itemsale.html">
+        <i class="fa fa-home" aria-hidden="true"></i> จัดการสินค้า
+      </a>
+    </li>
+    <li>
+      <a href="../doc/src/sale.html">
+        <i class="fa fa-home" aria-hidden="true"></i> ดูยอดขาย
+      </a>
+    </li>
+    <li class="header">Another Menu</li>
+    <li>
+      <a href="#">
+        <i class="fa fa-cog" aria-hidden="true"></i> Settings
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-info-circle" aria-hidden="true"></i> Information
+      </a>
+    </li>
+    <li>
+      <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">
+        <i class="fa fa-info-circle" aria-hidden="true"></i> ล็อกอินเข้าระบบ / สมัครสมาชิก
+      </a>
+    </li>
+  </ul>
 </div>
-       
+<div class="content-container">
+
+  <div class="container-fluid">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+    </div>
+
+  </div>
+</div>
         <!--Modal: Login / Register Form-->
 <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog cascading-modal" role="document">
@@ -134,64 +265,18 @@
   </div>
 </div>
 
-        
+<div class="content-container">
 
+  <div class="container-fluid">
 
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
     </div>
 
-     <div class="card-body">
-         <fieldset>
-         <table style="width: 100%;">
-			<tbody>
-				<tr style="height: 250px;" class="height_tb_home">
-
-					<td style="text-align: center;" class="td_home_pub_console">
-						<a href="../E-CommerceSystem-Store-หลอดไฟ/src/edit.html">
-						<!-- <a href=""> -->
-							<img class="img_home_pub_console" width= "15%" height="30%" src="https://www.flaticon.com/svg/static/icons/svg/3462/3462496.svg">
-							<div><font>แก้ไขข้อมูลบัญชี</font></div>
-						</a>
-					</td>
-
-					<td style="text-align: center;" class="td_home_pub_console">
-						<a href="../E-CommerceSystem-Store-หลอดไฟ/src/history.html">
-							<img class="img_home_pub_console"  width= "15%" height="30%" src="https://www.flaticon.com/svg/static/icons/svg/1260/1260103.svg">
-							<div><font>ประวัติรายการสั่งซื้อ</font></div>
-						</a>
-					</td>
+  </div>
+</div>
 
 
-										<td style="text-align: center;" class="td_home_pub_console">
-															<a href="../E-CommerceSystem-Store-หลอดไฟ/src/itemsale.html">
-														<img class="img_home_pub_console" width= "15%" height="30%" src="https://www.flaticon.com/svg/static/icons/svg/1524/1524539.svg">
-							<div><font>จัดการสินค้า</font></div>
-						</a>
-					</td>
-
-				</tr>
-
-				<tr style="height: 250px;" class="height_tb_home">
-
-					<td style="text-align: center;" class="td_home_pub_console">
-						<a href="../E-CommerceSystem-Store-หลอดไฟ/src/sale.html">
-							<img class="img_home_pub_console" width= "15%" height="30%"  src="https://www.flaticon.com/svg/static/icons/svg/3144/3144573.svg">
-							<div><font>ดูยอดขาย</font></div>
-						</a>
-					</td>
-
-				</tr>
-
-				
-			</tbody>
-		</table>
-         </fieldset>
-          </div>
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
-            <div>
-                <p>กลุ่มหลอดไฟ</p>
-            </div>
-        </footer>
-    </div>
     <!-- jQuery and JS bundle w/ Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
