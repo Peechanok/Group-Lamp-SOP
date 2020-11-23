@@ -115,27 +115,27 @@
   <ul class="sidebar-navigation">
     <li class="header">Navigation</li>
     <li>
-      <a href="../doc/index.html">
+      <a href="../index.html">
         <i class="fa fa-home" aria-hidden="true"></i> Home Page
       </a>
     </li>
     <li>
-      <a href="../doc/src/edit.html">
+      <a href="./edit.html">
         <i class="fa fa-users" aria-hidden="true"></i> แก้ไขข้อมูลบัญชี
       </a>
     </li>
     <li>
-      <a href="../doc/src/history.html">
+      <a href="./history.html">
         <i class="fa fa-tachometer" aria-hidden="true"></i> ประวัติรายการสั่งซื้อ
       </a>
     </li>
     <li>
-      <a href="../doc/src/itemsale.html">
+      <a href="./itemsale.html">
         <i class="fa fa-home" aria-hidden="true"></i> จัดการสินค้า
       </a>
     </li>
     <li>
-      <a href="../doc/src/sale.html">
+      <a href="./sale.html">
         <i class="fa fa-home" aria-hidden="true"></i> ดูยอดขาย
       </a>
     </li>
@@ -186,49 +186,43 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Jane">
+              <input id="First" class="form-control" type="text" value="Jane">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Bishop">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Company:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
+              <input id="Last" class="form-control" type="text" value="Bishop">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="janesemail@gmail.com">
+              <input id="Email" class="form-control" type="text" value="janesemail@gmail.com">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Username:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text" value="janeuser">
+              <input id="Username" class="form-control" type="text" value="janeuser">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input id="Password" class="form-control" type="password" value="">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Confirm password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input id="Confirm" class="form-control" type="password" value="">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Save Changes">
+              <input type="button" class="btn btn-primary" value="Save Changes" onclick='onSave()'>
               <span></span>
               <input type="reset" class="btn btn-default" value="Cancel">
             </div>
@@ -242,6 +236,58 @@
   </div>
 </div>
 <hr>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+let First = document.getElementById("First");
+let Last = document.getElementById("Last");
+let Email = document.getElementById("Email");
+let Username = document.getElementById("Username");
+let Password = document.getElementById("Password");
+let cerate = ''
+let current = 'e0b3980f-05eb-4c9e-92b9-651936073d02'
+fetch('http://localhost:8080/getSales?SALES_id='+current, {
+  method: 'GET',
+})
+.then(response => response.json())
+.then(data => {console.log(data)
+ First.value = data.firstName
+ Last.value = data.lastName
+ Email.value = data.email
+ Username.value = data.userName
+ create = data.dateCreated
+})
+.catch((error) => {
+  console.log(error)
+});
+
+function onSave(){
+  let data ={}
+  if(Password.value==""){
+  data = {"userName":Username.value,"password":"ffff","firstName":First.value,"lastName":Last.value ,"email":Email.value,"dateCreated":create,"sales_id":current}
+  }
+  else{
+  data = {"userName":Username.value,"password":Password.value,"firstName":First.value,"lastName":Last.value ,"email":Email.value,"dateCreated":create,"sales_id":current}
+  }
+  return fetch('http://localhost:8080/updateSales', {
+  method: 'put',
+  body: JSON.stringify(data),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+})
+.then(response => {response.json()})
+.then(data => {
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.log('Error:', error);
+});
+  
+  
+}
+
+</script>
 
 </body>
 
