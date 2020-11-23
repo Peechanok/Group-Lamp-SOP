@@ -378,58 +378,42 @@ h6{
 
     <div class='products-col'>
   <h2>PRODUCTS</h2>
-  <div class='flex-grid'>
-    <div class="simpleCart_shelfItem col">
-  <img src='https://c1.staticflickr.com/4/3927/33987376925_b7ca54ab9a_z.jpg' class='smaller-img img-responsive item_thumb'>
-  <h6 class="item_name"> Blue Mountain </h6>
-  <span class="item_price">$150</span><br>
-  <a class="item_add" href="../doc/src/itemsale.html"> Edit Product </a>
-      </div>
+  <div id = 'product' class='flex-grid'>
     
-    <div class="simpleCart_shelfItem col">
-  <img src='https://c1.staticflickr.com/4/3939/33987376465_3feff40be8_z.jpg' class='smaller-img img-responsive item_thumb'>
-  <h6 class="item_name"> Colombian </h6>
-  <span class="item_price">$35</span><br>
-  <a class="item_add" href="../doc/src/itemsale.html"> Edit Product </a>
-      </div>
-    
-    <div class="simpleCart_shelfItem col">
-  <img src='https://c1.staticflickr.com/4/3947/33987376045_bab0901385_z.jpg' class='smaller-img img-responsive item_thumb'>
-  <h6 class="item_name"> Java </h5>
-  <span class="item_price">$75</span><br>
-  <a class="item_add" href="../doc/src/itemsale.html"> Edit Product </a>
-      </div>
-   
- <div class="simpleCart_shelfItem col">
-  <img src='https://c1.staticflickr.com/3/2923/33175563003_0e1f3027cb_z.jpg' class='smaller-img img-responsive item_thumb'>
-  <h6 class="item_name"> Pre-ground </h6>
-  <span class="item_price">$15</span><br>
-  <a class="item_add" href="../doc/src/itemsale.html"> Edit Product </a>
-      </div>
-    
-    <div class="simpleCart_shelfItem col">
-  <img src='https://c1.staticflickr.com/3/2862/33175563343_d749df808e_z.jpg' class='smaller-img img-responsive item_thumb'>
-  <h6 class="item_name"> American </h6>
-  <span class="item_price">$42</span><br>
-  <a class="item_add" href="../doc/src/itemsale.html"> Edit Product </a>
-      </div>
-    
-    <div class="simpleCart_shelfItem col">
-  <img src='https://c1.staticflickr.com/3/2829/33175563553_800517b481_z.jpg' class='smaller-img img-responsive item_thumb'>
-  <h6 class="item_name"> Mocha </h6>
-  <span class="item_price">$30</span><br>
-  <a class="item_add" href="../doc/src/itemsale.html"> Edit Product </a>
-      </div>
     
     
 </div>
   </div>
 </div>
 </div>
-
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </div>
 <!-- </div> -->
+<script>
+ 
+let product = document.getElementById("product");
+let current = '1';
+axios
+  .get('http://localhost:8080/product/get/shop/'+current)
+  .then(response => {
+    let datas = response.data
+    datas.forEach((data)=>{
+      console.log(data)
+      let price = data.options[0].price
+      let div = document.createElement("div");
+    div.innerHTML = '<div class="simpleCart_shelfItem col"><img src="'+data.picture+'" class="smaller-img img-responsive item_thumb"><h6 class="item_name">'+data.name+'</h6><span class="item_price">'+price+'฿</span><br><a class="item_add" href="../doc/src/itemsale.html"> Edit Product </a></div>'
+    product.append(div)
+    }
+    )
+    
+  })
 
+.catch((error) => {
+  console.error(error)
+});
+
+
+</script>
 
     <!-- jQuery and JS bundle w/ Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
