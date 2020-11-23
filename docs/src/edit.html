@@ -15,12 +15,150 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>02</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
 <body >
+<style>
+.sidebar-container {
+  position: fixed;
+  width: 220px;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.content-container {
+  padding-top: 20px;
+}
+
+.sidebar-logo {
+  padding: 10px 15px 10px 30px;
+  font-size: 20px;
+  background-color: #2574A9;
+}
+
+.sidebar-navigation {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  position: relative;
+}
+
+.sidebar-navigation li {
+  background-color: transparent;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  line-height: 20px;
+}
+
+.sidebar-navigation li a {
+  padding: 10px 15px 10px 30px;
+  display: block;
+  color: #fff;
+}
+
+.sidebar-navigation li .fa {
+  margin-right: 10px;
+}
+
+.sidebar-navigation li a:active,
+.sidebar-navigation li a:hover,
+.sidebar-navigation li a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.sidebar-navigation li::before {
+  background-color: #2574A9;
+  position: absolute;
+  content: '';
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
+  width: 3px;
+  z-index: -1;
+}
+
+.sidebar-navigation li:hover::before {
+  width: 100%;
+}
+
+.sidebar-navigation .header {
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: #151515;
+  padding: 10px 15px 10px 30px;
+}
+
+.sidebar-navigation .header::before {
+  background-color: transparent;
+}
+
+.content-container {
+  padding-left: 220px;
+}
+</style>
+
+<body>
+    <div class="sidebar-container">
+  <div class="sidebar-logo">
+    E-Commerce
+  </div>
+  <ul class="sidebar-navigation">
+    <li class="header">Navigation</li>
+    <li>
+      <a href="../index.html">
+        <i class="fa fa-home" aria-hidden="true"></i> Home Page
+      </a>
+    </li>
+    <li>
+      <a href="./edit.html">
+        <i class="fa fa-users" aria-hidden="true"></i> แก้ไขข้อมูลบัญชี
+      </a>
+    </li>
+    <li>
+      <a href="./history.html">
+        <i class="fa fa-tachometer" aria-hidden="true"></i> ประวัติรายการสั่งซื้อ
+      </a>
+    </li>
+    <li>
+      <a href="./itemsale.html">
+        <i class="fa fa-home" aria-hidden="true"></i> จัดการสินค้า
+      </a>
+    </li>
+    <li>
+      <a href="./sale.html">
+        <i class="fa fa-home" aria-hidden="true"></i> ดูยอดขาย
+      </a>
+    </li>
+    <li class="header">Another Menu</li>
+    <li>
+      <a href="#">
+        <i class="fa fa-cog" aria-hidden="true"></i> Settings
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-info-circle" aria-hidden="true"></i> Information
+      </a>
+    </li>
+  </ul>
+</div>
+<body>
+<div class="content-container">
+
+  <div class="container-fluid">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
 <div class="container">
     <h1>Edit Profile</h1>
   	<hr>
@@ -48,49 +186,43 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Jane">
+              <input id="First" class="form-control" type="text" value="Jane">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Bishop">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Company:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
+              <input id="Last" class="form-control" type="text" value="Bishop">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="janesemail@gmail.com">
+              <input id="Email" class="form-control" type="text" value="janesemail@gmail.com">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Username:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text" value="janeuser">
+              <input id="Username" class="form-control" type="text" value="janeuser">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input id="Password" class="form-control" type="password" value="">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Confirm password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+              <input id="Confirm" class="form-control" type="password" value="">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Save Changes">
+              <input type="button" class="btn btn-primary" value="Save Changes" onclick='onSave()'>
               <span></span>
               <input type="reset" class="btn btn-default" value="Cancel">
             </div>
@@ -99,7 +231,63 @@
       </div>
   </div>
 </div>
+  </div>
+
+  </div>
+</div>
 <hr>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+let First = document.getElementById("First");
+let Last = document.getElementById("Last");
+let Email = document.getElementById("Email");
+let Username = document.getElementById("Username");
+let Password = document.getElementById("Password");
+let cerate = ''
+let current = 'e0b3980f-05eb-4c9e-92b9-651936073d02'
+fetch('http://localhost:8080/getSales?SALES_id='+current, {
+  method: 'GET',
+})
+.then(response => response.json())
+.then(data => {console.log(data)
+ First.value = data.firstName
+ Last.value = data.lastName
+ Email.value = data.email
+ Username.value = data.userName
+ create = data.dateCreated
+})
+.catch((error) => {
+  console.log(error)
+});
+
+function onSave(){
+  let data ={}
+  if(Password.value==""){
+  data = {"userName":Username.value,"password":"ffff","firstName":First.value,"lastName":Last.value ,"email":Email.value,"dateCreated":create,"sales_id":current}
+  }
+  else{
+  data = {"userName":Username.value,"password":Password.value,"firstName":First.value,"lastName":Last.value ,"email":Email.value,"dateCreated":create,"sales_id":current}
+  }
+  return fetch('http://localhost:8080/updateSales', {
+  method: 'put',
+  body: JSON.stringify(data),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8"
+  }
+})
+.then(response => {response.json()})
+.then(data => {
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.log('Error:', error);
+});
+  
+  
+}
+
+</script>
 
 </body>
 
