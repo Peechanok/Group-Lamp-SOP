@@ -17,6 +17,7 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
 </head>
 
 <body >
@@ -186,39 +187,67 @@
           <div class="form-group">
             <label class="col-lg-3 control-label">First name:</label>
             <div class="col-lg-8">
-              <input id="First" class="form-control" type="text" value="Jane">
+              <input id="First" class="form-control" type="text" value="">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Last name:</label>
             <div class="col-lg-8">
-              <input id="Last" class="form-control" type="text" value="Bishop">
+              <input id="Last" class="form-control" type="text" value="">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input id="Email" class="form-control" type="text" value="janesemail@gmail.com">
+              <input id="Email" class="form-control" type="text" value="">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Username:</label>
             <div class="col-md-8">
-              <input id="Username" class="form-control" type="text" value="janeuser">
+              <input id="Username" class="form-control" type="text" value="">
             </div>
           </div>
           <div class="form-group">
-            <label class="col-md-3 control-label">Password:</label>
-            <div class="col-md-8">
-              <input id="Password" class="form-control" type="password" value="">
+            <label class="col-md-3 control-label">Address :</label>
+            <hr>
+            <label class="col-md-4 control-label">province :</label>
+            <div class="col-md-3">
+              <input id="province" class="form-control" type="text" value="">
             </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label">Confirm password:</label>
-            <div class="col-md-8">
-              <input id="Confirm" class="form-control" type="password" value="">
+           
+            <label class="col-md-2 control-label">district :</label>
+            <div class="col-md-3">
+              <input id="district" class="form-control" type="text" value="">
             </div>
+
+
+            <label class="col-md-2 control-label">sub_district :</label>
+            <div class="col-md-3">
+              <input id="sub_district" class="form-control" type="text" value="">
+            </div>
+
+            <label class="col-md-2 control-label">road :</label>
+            <div class="col-md-3">
+              <input id="road" class="form-control" type="text" value="">
+            </div>
+
+            <label class="col-md-2 control-label">number :</label>
+            <div class="col-md-3">
+              <input id="number" class="form-control" type="text" value="">
+            </div>
+
+            <label class="col-md-2 control-label">postal_code :</label>
+            <div class="col-md-3">
+              <input id="postal_code" class="form-control" type="text" value="">
+            </div>
+            <label class="col-md-2 control-label">Shop Name :</label>
+            <div class="col-md-3">
+              <input id="shopName" class="form-control" type="text" value="">
+            </div>
+
           </div>
+        
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
@@ -236,7 +265,7 @@
   </div>
 </div>
 <hr>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
 
 let First = document.getElementById("First");
@@ -244,24 +273,80 @@ let Last = document.getElementById("Last");
 let Email = document.getElementById("Email");
 let Username = document.getElementById("Username");
 let Password = document.getElementById("Password");
-let cerate = ''
-let current = 'e0b3980f-05eb-4c9e-92b9-651936073d02'
-fetch('http://localhost:8080/getSales?SALES_id='+current, {
-  method: 'GET',
-})
-.then(response => response.json())
-.then(data => {console.log(data)
+let Province = document.getElementById("province");
+let District = document.getElementById("district");
+let Sub_district = document.getElementById("sub_district");
+let Road = document.getElementById("road");
+let Numbern = document.getElementById("number");
+let Postal_code = document.getElementById("postal_code");
+let Shop = document.getElementById("shopName");
+let create = ''
+let current = '1'
+// axios
+// let one =
+//   "http://localhost:8080/getSales?SALES_id="+current;
+// let two =
+// "http://localhost:8080/getAddressbySales?SALES_id="+current;
+
+
+// const requestOne = axios.get(one);
+// const requestTwo = axios.get(two);
+
+
+// axios
+//   .all([requestOne, requestTwo])
+//   .then(
+//     axios.spread((...responses) => {
+//       const responseOne = responses[0];
+//       const responseTwo = responses[1];
+     
+axios
+
+  .get('http://localhost:8080/getSales?SALES_id='+current) 
+  // .get('http://localhost:8080/getAddress?My_address_id='+current)
+  .then(response => response.data)
+ .then(data => {console.log(data)
  First.value = data.firstName
  Last.value = data.lastName
  Email.value = data.email
  Username.value = data.userName
+
  create = data.dateCreated
-})
+    })
 .catch((error) => {
   console.log(error)
-});
+}
+);
+
+axios
+  .get('http://localhost:8080/getAddress?My_address_id='+current)
+  .then(response => response.data)
+ .then(data => {console.log(data)
+ Province.value = data.province
+ District.value = data.district
+  Sub_district.value = data.sub_district
+  Road.value = data.road
+  Numbern.value = data.number
+  Postal_code.value = data.postal_code
+    })
+.catch((error) => {
+  console.log(error)
+}
+);
+axios
+  .get('http://localhost:8080//getShopbysalesid?SALES_id='+current)
+  .then(response => response.data)
+ .then(data => {console.log(data)
+ Shop.value = data.shopName
+
+    })
+.catch((error) => {
+  console.log(error)
+}
+);
 
 function onSave(){
+ 
   let data ={}
   if(Password.value==""){
   data = {"userName":Username.value,"password":"ffff","firstName":First.value,"lastName":Last.value ,"email":Email.value,"dateCreated":create,"sales_id":current}
@@ -269,21 +354,16 @@ function onSave(){
   else{
   data = {"userName":Username.value,"password":Password.value,"firstName":First.value,"lastName":Last.value ,"email":Email.value,"dateCreated":create,"sales_id":current}
   }
-  return fetch('http://localhost:8080/updateSales', {
-  method: 'put',
-  body: JSON.stringify(data),
-  headers: {
-    "Content-type": "application/json; charset=UTF-8"
-  }
-})
-.then(response => {response.json()})
-.then(data => {
-  console.log('Success:', data);
-})
-.catch((error) => {
-  console.log('Error:', error);
-});
   
+ axios.put("https://4c52b9aa1168.ngrok.io/updateSales", data, { useCredentails: true }, {headers: { 'Content-Type': "application/json"}})
+                .then(response => {
+                    console.log("response: ", response.data)
+
+                })
+                .catch(err => {
+                    console.error(err)
+                })
+
   
 }
 
